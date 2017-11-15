@@ -1,0 +1,38 @@
+.form {
+  padding: 2rem 1rem 1rem;
+
+  &__warning {
+    color: $dark-grey;
+    left: 50%;
+    margin-bottom: 0;
+    margin-left: -6rem;
+    position: absolute;
+    text-align: center;
+    width: 12rem;
+  }
+
+  &__input-wrapper {
+    margin-top: 1rem;
+  }
+
+  &__input {
+    border: none !important;
+    &--title {
+      font-size: 1.77rem;
+      font-weight: bold;
+    }
+  }
+
+  &__btn {
+    font-size: 1.8rem;
+    margin-left: 1rem;
+    span {
+      color: $brand-color;
+    }
+  }
+
+  &__btn-edit {
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+}

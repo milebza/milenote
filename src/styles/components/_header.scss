@@ -1,0 +1,24 @@
+.header {
+  background-color: $brand-color;
+  box-shadow: 0 4px 2px -2px $light-grey;
+  color: white;
+  text-align: center;
+
+  &__title {
+    padding: 2rem 0 1rem;
+  }
+
+  &__link {
+    color: white !important;
+    font-size: 2rem;
+    padding-bottom: .5rem;
+    text-decoration: none !important;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+    &--active {
+      border-bottom: 2px solid $black;
+    }
+  }
+}

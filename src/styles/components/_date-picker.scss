@@ -1,0 +1,12 @@
+.DateRangePickerInput {
+  border: none;
+}
+
+.DateInput {
+  padding: 0;
+}
+
+.DateRangePickerInput__clear-dates:focus,
+.DateRangePickerInput__clear-dates--hover {
+  background: white;
+}

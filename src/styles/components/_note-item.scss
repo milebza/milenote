@@ -1,0 +1,32 @@
+.note-item {
+  border-bottom: 2px solid $light-grey;
+  height: 10rem;
+  padding: 1rem 0;
+
+  &__content {
+    color: $black !important;
+    text-decoration: none !important;
+  }
+
+  &__title {
+    height: 2.1rem;
+    overflow: hidden;
+  }
+
+  &__p {
+    height: 2.4rem;
+    margin-bottom: .4em;
+    overflow: hidden;
+  }
+
+  &__date {
+    color: $medium-grey;
+  }
+
+  &__btn-remove {
+    margin-top: -14px;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+  }
+}
