@@ -1,6 +1,6 @@
 .header {
   background-color: $brand-color;
-  box-shadow: 0 4px 2px -2px $light-grey;
+  box-shadow: 0 2px 2px 0 lighten($medium-grey, 20%);
   color: white;
   text-align: center;
 

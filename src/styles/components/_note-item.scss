@@ -17,6 +17,7 @@
     height: 2.4rem;
     margin-bottom: .4em;
     overflow: hidden;
+    padding-right: 1rem;
   }
 
   &__date {
@@ -26,7 +27,7 @@
   &__btn-remove {
     margin-top: -14px;
     position: absolute;
-    right: 1rem;
+    right: 2rem;
     top: 50%;
   }
 }

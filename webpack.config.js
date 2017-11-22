@@ -5,9 +5,11 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 // way to expose something to another file
-module.exports = () => {
+module.exports = (env) => {
+  const isProduction = env === 'production'
   const CSSExtract = new ExtractTextPlugin('style.css')
 
+  // return webpack config object
   return {
     entry: './src/app.js',
     output: {
@@ -52,7 +54,7 @@ module.exports = () => {
     plugins: [
       CSSExtract
     ],
-    devtool: 'inline-source-map',
+    devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
       historyApiFallback: true

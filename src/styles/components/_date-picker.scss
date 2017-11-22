@@ -1,3 +1,19 @@
+.CalendarDay {
+  &--selected-span {
+    background-color: $brand-color-light;
+    border-color: white;
+  }
+  &--hovered {
+    border-color: white !important;
+  }
+}
+
+.DateInput__display-text--focused {
+    background: $brand-color-light;
+    border-color: $brand-color-light;
+    color: white;
+}
+
 .DateRangePickerInput {
   border: none;
 }

@@ -1,5 +1,6 @@
 // Colors
 $brand-color      : #4dd1b6;
+$brand-color-light: lighten($brand-color, 20%);
 $black            : #0e0f0f;
 $light-grey       : #f0f0f0;
 $dark-grey        : #494949;

@@ -17,8 +17,8 @@ class NoteListFilters extends React.Component {
   render() {
     return (
       <div className="row filters">
-        <div className="col col-md-6">
-          <input className="form__input" type="text" placeholder="Search" value={this.props.filters.text} onChange={(e) => {
+        <div className="col col-md-6 filters__search">
+          <input className="form__input filters__search-input" type="text" value={this.props.filters.text} onChange={(e) => {
             this.props.dispatch(setTextFilter(e.target.value))
           }} />
         </div>

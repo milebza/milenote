@@ -1,8 +1,26 @@
 .filters {
-  box-shadow: 0 4px 2px -2px $light-grey;
+  box-shadow: 0 2px 2px 0 $light-grey;
+  background-color: white;
+
+  &__search {
+    position: relative;
+    &:after {
+      color: lighten($medium-grey, 20%);
+      content: "\e986";
+      font-family: 'icomoon';
+      left: 1.5rem;
+      position: absolute;
+      top: .8rem;
+    }
+  }
+
+  &__search-input {
+    padding-left: 3rem !important;
+  }
 }
 
 .no-result {
-  color: $dark-grey;
+  color: lighten($medium-grey, 20%);
+  font-style: italic;
   margin-top: 1em;
 }

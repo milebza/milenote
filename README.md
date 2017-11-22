@@ -1,7 +1,7 @@
 # milenote
-A notes application created while learning React.js
+A notes application created while learning React.js.
 
-To try the beta version locally follow the steps below.
+To try it locally follow the steps below.
 
 # Usage
 
@@ -16,8 +16,3 @@ npm install
 # and run the app locally
 npm run dev-server
 ```
-
-
-
-
-

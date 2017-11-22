@@ -1,10 +1,14 @@
 @import './vendor/font';
+
 @import './base/settings';
 @import './base/base';
 @import './base/utils';
+
 @import './components/header';
 @import './components/form';
 @import './components/date-picker';
 @import './components/note-item';
 @import './components/note-info';
 @import './components/filters';
+
+@import './pages/info-page';

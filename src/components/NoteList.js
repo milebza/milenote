@@ -5,7 +5,7 @@ import selectNotes from '../selectors/notes'
 
 const NoteList = (props) => (
   <div>
-    {props.notes.length === 0 && <p className="text-center no-result">No notes</p>}
+    {props.notes.length === 0 && <p className="text-center no-result">No notes!</p>}
     {props.notes.map((note) => {
       return <NoteListItem key={note.id} {...note} />
     })}
