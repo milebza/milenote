@@ -1,6 +1,8 @@
 # milenote
 A notes application created while learning React.js.
 
+Available here: https://milebza.github.io/milenote
+
 To try it locally follow the steps below.
 
 # Usage
