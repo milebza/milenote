@@ -25,9 +25,9 @@ const InfoPage = () => (
         <p className="info-page__description">Remove a note</p>
       </div>
     </div>
-    <div className="flex">
+    <div className="flex info-page__bug">
       <div className="col col-xs-2 text-center"><span className="info-page__icon icon icon-pacman"></span></div>
-      <div className="col col-xs-10"><p className="info-page__description">Want to report a bug? <a className="info-page__link" href="https://github.com/milebza/milenote/issues" target="_blank">Talk to me</a></p></div>
+      <div className="col col-xs-10"><p className="info-page__description">Found a bug? <a className="info-page__link" href="https://github.com/milebza/milenote/issues" target="_blank">Tell me</a></p></div>
     </div>
     <p className="info-page__credit text-center"><small>&copy; 2017 &mdash; <a className="info-page__credit-link" href="https://milebza.github.io/" target="_blank">Milena Baeza</a></small></p>
   </div>
