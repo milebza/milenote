@@ -1,5 +1,11 @@
 .note-info {
-  &__title, &__p {
+  &__title{
     padding: 0.375em 0.75em;
+  }
+
+  &__content {
+    background-color: white !important;
+    color: $black !important;
+    cursor: default !important;
   }
 }

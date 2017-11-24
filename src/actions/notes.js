@@ -3,7 +3,7 @@ import uuid from 'uuid'
 // ADD_NOTE
 export const addNote = ({ title = '', content = '',  date = 0 } = {}) => ({
   type: 'ADD_NOTE',
-  Note: {
+  note: {
     id: uuid(),
     title,
     content,
