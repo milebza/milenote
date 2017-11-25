@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import notesReducer from '../reducers/notes.js'
 import filtersReducer from '../reducers/filters.js'
 // thunk will allow redux to return functions and not only objects
