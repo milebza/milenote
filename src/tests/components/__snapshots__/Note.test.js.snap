@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shoud render Note with note content 1`] = `
+<div
+  className="form padding-075"
+>
+  <h3
+    className="note-info__title"
+  >
+    Letter
+  </h3>
+  <textarea
+    className="form__input note-info__content"
+    disabled={true}
+    rows="20"
+    value="Dear friend"
+  />
+</div>
+`;

@@ -3,24 +3,25 @@ import { connect } from 'react-redux'
 import { DateRangePicker } from 'react-dates'
 import { setTextFilter, setStartDate, setEndDate } from '../actions/filters'
 
-class NoteListFilters extends React.Component {
+export class NoteListFilters extends React.Component {
   state = {
     calendarFocused: null
   }
   onDatesChange = ({ startDate, endDate }) => {
-    this.props.dispatch(setStartDate(startDate))
-    this.props.dispatch(setEndDate(endDate))
+    this.props.setStartDate(startDate)
+    this.props.setEndDate(endDate)
   }
   onFocusChange = (calendarFocused) => {
     this.setState(() => ({ calendarFocused }))
+  }
+  onTextChange = (e) => {
+    this.props.setTextFilter(e.target.value)
   }
   render() {
     return (
       <div className="row filters">
         <div className="col col-md-6 filters__search">
-          <input className="form__input filters__search-input" type="text" value={this.props.filters.text} onChange={(e) => {
-            this.props.dispatch(setTextFilter(e.target.value))
-          }} />
+          <input className="form__input filters__search-input" type="text" value={this.props.filters.text} onChange={this.onTextChange} />
         </div>
         <div className="col col-md-6">
           <DateRangePicker
@@ -39,10 +40,12 @@ class NoteListFilters extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    filters: state.filters
-  }
-}
+const mapStateToProps = (state) => ({ filters: state.filters })
 
-export default connect(mapStateToProps)(NoteListFilters)
+const mapDispatchToProps = (dispatch) => ({
+  setTextFilter: (text) => dispatch(setTextFilter(text)),
+  setStartDate: (date) => dispatch(setStartDate(date)),
+  setEndDate: (date) => dispatch(setEndDate(date))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(NoteListFilters)

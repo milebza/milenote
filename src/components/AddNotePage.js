@@ -1,17 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addNote } from '../actions/notes'
+import { startAddNote } from '../actions/notes'
 import NoteForm from './NoteForm'
 
-const AddNotePage = (props) => (
-  <div>
-    <NoteForm
-      onSubmit={(note) => {
-        props.dispatch(addNote(note))
-        props.history.push('/')
-      }}
-    />
-  </div>
-)
+export class AddNotePage extends React.Component {
+  onSubmit = (note) => {
+    this.props.startAddNote(note)
+    this.props.history.push('/')
+  }
+  render() {
+    return (
+      <div>
+        <NoteForm
+          onSubmit={this.onSubmit}
+        />
+      </div>
+    )
+  }
+}
 
-export default connect()(AddNotePage)
+const mapDispatchToProps = (dispatch) => ({
+  startAddNote: (note) => dispatch(startAddNote(note))
+})
+
+export default connect(undefined, mapDispatchToProps)(AddNotePage)

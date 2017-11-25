@@ -1,6 +1,10 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import notesReducer from '../reducers/notes.js'
 import filtersReducer from '../reducers/filters.js'
+// thunk will allow redux to return functions and not only objects
+import thunk from 'redux-thunk'
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 export default () => {
   // Store creation
@@ -9,7 +13,7 @@ export default () => {
       notes: notesReducer,
       filters: filtersReducer
     }),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    composeEnhancers(applyMiddleware(thunk))
   )
 
   return store

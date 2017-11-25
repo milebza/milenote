@@ -1,8 +1,20 @@
 // this is a node js script
 
 // path is from node js
-const path = require('path');
+const path = require('path')
+const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+// environment variable
+// stores the current environment you're working on
+// e.g heroku sets it to production
+process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+
+if (process.env.NODE_ENV === 'test') {
+  require('dotenv').config({ path: '.env.test' })
+} else if (process.env.NODE_ENV === 'development') {
+  require('dotenv').config({ path: '.env.development' })
+}
 
 // way to expose something to another file
 module.exports = (env) => {
@@ -52,7 +64,16 @@ module.exports = (env) => {
       }]
     },
     plugins: [
-      CSSExtract
+      CSSExtract,
+      // expose the env variables to client side js
+      new webpack.DefinePlugin({
+        'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
+        'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
+        'process.env.FIREBASE_DATABASE_URL': JSON.stringify(process.env.FIREBASE_DATABASE_URL),
+        'process.env.FIREBASE_PROJECT_ID': JSON.stringify(process.env.FIREBASE_PROJECT_ID),
+        'process.env.FIREBASE_STORAGE_BUCKET': JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
+        'process.env.FIREBASE_SENDER_ID': JSON.stringify(process.env.FIREBASE_SENDER_ID)
+      })
     ],
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
