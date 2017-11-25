@@ -39,9 +39,48 @@ export const removeNote = ({ id } = {}) => ({
   id
 })
 
+export const startRemoveNote = ({ id } = {}) => {
+  return (dispatch) => {
+    return database.ref(`notes/${id}`).remove().then(() => {
+      dispatch(removeNote({ id }))
+    })
+  }
+}
+
 // EDIT_NOTE
 export const editNote = (id, updates) => ({
   type: 'EDIT_NOTE',
   id,
   updates
 })
+
+export const startEditNote = (id, updates) => {
+  return (dispatch) => {
+    return database.ref(`notes/${id}`).update(updates).then(() => {
+      dispatch(editNote(id, updates))
+    })
+  }
+}
+
+// SET_NOTES
+export const setNotes = (notes) => ({
+  type: 'SET_NOTES',
+  notes
+})
+
+export const startSetNotes = () => {
+  return (dispatch) => {
+    return database.ref('notes').once('value').then((snapshot) => {
+      const notes = []
+
+      snapshot.forEach((childSnapshot) => {
+        notes.push({
+          id: childSnapshot.key,
+          ...childSnapshot.val()
+        })
+      })
+
+      dispatch(setNotes(notes))
+    })
+  }
+}

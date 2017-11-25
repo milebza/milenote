@@ -1,16 +1,69 @@
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
-import { startAddNote, addNote, editNote, removeNote } from '../../actions/notes'
+import {
+  startAddNote,
+  addNote,
+  editNote,
+  startEditNote,
+  removeNote,
+  startRemoveNote,
+  setNotes,
+  startSetNotes } from '../../actions/notes'
 import notes from '../fixtures/notes'
 import database from '../../firebase/firebase'
 
 const createMockStore = configureMockStore([thunk])
+
+beforeEach((done) => {
+  const notesData = {}
+  notes.forEach(({ id, title, content, date }) => {
+    notesData[id] = { title, content, date }
+  })
+  database.ref('notes').set(notesData).then(() => done())
+})
 
 test('should generate remove note action object', () => {
   const action = removeNote({ id: '123abc' })
   expect(action).toEqual({
     type: 'REMOVE_NOTE',
     id: '123abc'
+  })
+})
+
+test('should edit note from firebase', (done) => {
+  const store = createMockStore()
+  const id = notes[0].id
+  const updates = {
+    title: 'Untitled'
+  }
+  store.dispatch(startEditNote(id, updates)).then(() => {
+    const actions = store.getActions()
+    expect(actions[0]).toEqual({
+      type: 'EDIT_NOTE',
+      id,
+      updates
+    })
+    return database.ref(`notes/${id}`).once('value')
+  }).then((snapshot) => {
+    expect(snapshot.val().title).toBe(updates.title)
+    done()
+  })
+})
+
+test('should remove note from firebase', (done) => {
+  const store = createMockStore({})
+  const id = notes[2].id
+
+  store.dispatch(startRemoveNote({ id })).then(() => {
+    const actions = store.getActions()
+    expect(actions[0]).toEqual({
+      type: 'REMOVE_NOTE',
+      id
+    })
+    return database.ref(`notes/${id}`).once('value')
+  }).then((snapshot) => {
+    expect(snapshot.val()).toBeFalsy()
+    done()
   })
 })
 
@@ -85,15 +138,23 @@ test('should add note with defaults to database and store', (done) => {
   })
 })
 
-// test('should generate add note action object with default values', () => {
-//   const action = addNote()
-//   expect(action).toEqual(
-//     type: 'ADD_NOTE',
-//     note: {
-//       id: expect.any(String),
-//       title: '',
-//       content: '',
-//       date: 0
-//     }
-//   )
-// })
+test('should setup set notes action object with data', () => {
+  const action = setNotes(notes)
+  expect(action).toEqual({
+    type: 'SET_NOTES',
+    notes
+  })
+})
+
+test('should fetch notes from firebase', (done) => {
+  const store = createMockStore({})
+
+  store.dispatch(startSetNotes()).then(() => {
+    const actions = store.getActions()
+    expect(actions[0]).toEqual({
+      type: 'SET_NOTES',
+      notes
+    })
+    done()
+  })
+})

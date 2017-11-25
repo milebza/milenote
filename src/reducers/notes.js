@@ -20,6 +20,8 @@ export default (state = NotesReducerDefaultState, action) => {
         }
         return note
       })
+    case 'SET_NOTES':
+        return action.notes
     default:
       return state
   }

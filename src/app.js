@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import AppRouter from './router/AppRouter'
 import configureStore from './store/configureStore'
-import { addNote } from './actions/notes'
+import { startSetNotes } from './actions/notes'
 import { setTextFilter } from './actions/filters'
 
 import 'baseguide/scss/baseguide.scss'
@@ -19,5 +19,8 @@ const jsx = (
     <AppRouter />
   </Provider>
 )
+ReactDOM.render(<p className="text-center">Getting your notes...</p>, document.getElementById('app'))
 
-ReactDOM.render(jsx, document.getElementById('app'))
+store.dispatch(startSetNotes()).then(() => {
+  ReactDOM.render(jsx, document.getElementById('app'))
+})

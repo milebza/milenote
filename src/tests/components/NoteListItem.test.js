@@ -3,19 +3,19 @@ import { shallow } from 'enzyme'
 import { NoteListItem } from '../../components/NoteListItem'
 import notes from '../fixtures/notes'
 
-let removeNote, note, wrapper
+let startRemoveNote, note, wrapper
 
 beforeEach(() => {
-  removeNote = jest.fn()
+  startRemoveNote = jest.fn()
   note = notes[0]
-  wrapper = shallow(<NoteListItem {...note} removeNote={removeNote} />)
+  wrapper = shallow(<NoteListItem {...note} startRemoveNote={startRemoveNote} />)
 })
 
 test('should render NoteListItem correctly', () => {
   expect(wrapper).toMatchSnapshot()
 })
 
-test('should handle removeNote', () => {
+test('should handle startRemoveNote', () => {
   wrapper.find('button').simulate('click')
-  expect(removeNote).toHaveBeenLastCalledWith({id: notes[0].id})
+  expect(startRemoveNote).toHaveBeenLastCalledWith({id: notes[0].id})
 })

@@ -64,3 +64,12 @@ test('should not edit note if id not found', () => {
   const state = notesReducer(notes, action)
   expect(state).toEqual(notes)
 })
+
+test('should set notes', () => {
+  const action = {
+    type: 'SET_NOTES',
+    notes: [notes[2]]
+  }
+  const state = notesReducer(notes, action)
+  expect(state).toEqual([notes[2]])
+})

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { editNote, removeNote } from '../actions/notes'
+import { startEditNote, startRemoveNote } from '../actions/notes'
 import Note from './Note'
 import NoteForm from './NoteForm'
 
@@ -9,11 +9,11 @@ export class EditNotePage extends React.Component {
     editView: false
   }
   onSubmit = (note) => {
-    this.props.editNote(this.props.note.id, note)
+    this.props.startEditNote(this.props.note.id, note)
     this.props.history.push('/')
   }
   onRemove = () => {
-    this.props.removeNote({ id: this.props.note.id })
+    this.props.startRemoveNote({ id: this.props.note.id })
     this.props.history.push('/')
   }
   handleEditView = () => {
@@ -48,8 +48,8 @@ export class EditNotePage extends React.Component {
 const mapStateToProps = (state, props) => ({ note: state.notes.find((note) => note.id === props.match.params.id) })
 
 const mapDispatchToProps = (dispatch) => ({
-  editNote: (id, note) => dispatch(editNote(id, note)),
-  removeNote: (data) => dispatch(removeNote(data))
+  startEditNote: (id, note) => dispatch(startEditNote(id, note)),
+  startRemoveNote: (data) => dispatch(startRemoveNote(data))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditNotePage)

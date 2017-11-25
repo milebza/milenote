@@ -2,11 +2,11 @@ import React from 'react'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { removeNote } from '../actions/notes'
+import { startRemoveNote } from '../actions/notes'
 
 export class NoteListItem extends React.Component {
   onRemove = () => {
-    this.props.removeNote({ id: this.props.id })
+    this.props.startRemoveNote({ id: this.props.id })
   }
   render() {
     return (
@@ -27,7 +27,7 @@ export class NoteListItem extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  removeNote: (data) => dispatch(removeNote(data))
+  startRemoveNote: (data) => dispatch(startRemoveNote(data))
 })
 
 export default connect(undefined, mapDispatchToProps)(NoteListItem)
