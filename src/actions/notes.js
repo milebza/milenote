@@ -1,7 +1,6 @@
-import uuid from 'uuid'
 import database from '../firebase/firebase'
 
-// components calls action generator
+// component calls action generator
 // action generator returns function
 // component dispatches function
 // function runs (has the ability to dispatch other actions and do whatever it wants)
@@ -15,7 +14,8 @@ export const addNote = (note) => ({
 export const startAddNote = (noteData = {}) => {
   // this function only works due to thunk
   // it gets called internally by redux
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid
     // default data
     const {
       title = '',
@@ -24,7 +24,7 @@ export const startAddNote = (noteData = {}) => {
     } = noteData
     const note = {title, content, date}
 
-    return database.ref('notes').push(note).then((ref) => {
+    return database.ref(`users/${uid}/notes`).push(note).then((ref) => {
       dispatch(addNote({
         id: ref.key,
         ...note
@@ -40,8 +40,9 @@ export const removeNote = ({ id } = {}) => ({
 })
 
 export const startRemoveNote = ({ id } = {}) => {
-  return (dispatch) => {
-    return database.ref(`notes/${id}`).remove().then(() => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid
+    return database.ref(`users/${uid}/notes/${id}`).remove().then(() => {
       dispatch(removeNote({ id }))
     })
   }
@@ -55,8 +56,9 @@ export const editNote = (id, updates) => ({
 })
 
 export const startEditNote = (id, updates) => {
-  return (dispatch) => {
-    return database.ref(`notes/${id}`).update(updates).then(() => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid
+    return database.ref(`users/${uid}/notes/${id}`).update(updates).then(() => {
       dispatch(editNote(id, updates))
     })
   }
@@ -69,8 +71,9 @@ export const setNotes = (notes) => ({
 })
 
 export const startSetNotes = () => {
-  return (dispatch) => {
-    return database.ref('notes').once('value').then((snapshot) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid
+    return database.ref(`users/${uid}/notes`).once('value').then((snapshot) => {
       const notes = []
 
       snapshot.forEach((childSnapshot) => {

@@ -1,16 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import AppRouter from './router/AppRouter'
+import AppRouter, { history } from './router/AppRouter'
 import configureStore from './store/configureStore'
 import { startSetNotes } from './actions/notes'
-import { setTextFilter } from './actions/filters'
+import { login, logout } from './actions/auth'
 
 import 'baseguide/scss/baseguide.scss'
 import 'react-dates/lib/css/_datepicker.css';
 import './styles/style.scss'
 
-import './firebase/firebase'
+import { firebase } from './firebase/firebase'
 
 const store = configureStore()
 
@@ -19,8 +19,34 @@ const jsx = (
     <AppRouter />
   </Provider>
 )
-ReactDOM.render(<p className="text-center">Getting your notes...</p>, document.getElementById('app'))
 
-store.dispatch(startSetNotes()).then(() => {
-  ReactDOM.render(jsx, document.getElementById('app'))
+let hasRendered = false
+const renderApp = () => {
+  if (!hasRendered) {
+    ReactDOM.render(jsx, document.getElementById('app'))
+    hasRendered = true
+  }
+}
+
+ReactDOM.render(<p className="text-center">Loading...</p>, document.getElementById('app'))
+
+// When the page first loads
+// and the auth state changes
+// this will automatically trigger
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    store.dispatch(login(user.uid))
+    // Fetch notes
+    store.dispatch(startSetNotes()).then(() => {
+      renderApp()
+      // If in login page redirect to dashboard page
+      if (history.location.pathname === '/') {
+        history.push('/dashboard')
+      }
+    })
+  } else {
+    store.dispatch(logout())
+    renderApp()
+    history.push('/')
+  }
 })

@@ -9,6 +9,11 @@ exports[`should render Header correctly 1`] = `
   >
     milenote
   </h1>
+  <button
+    onClick={[Function]}
+  >
+    Logout
+  </button>
   <nav
     className="row header__nav"
   >
@@ -16,8 +21,7 @@ exports[`should render Header correctly 1`] = `
       activeClassName="header__link--active"
       ariaCurrent="true"
       className="col col-xs-4 header__link"
-      exact={true}
-      to="/"
+      to="/dashboard"
     >
       <span
         className="icon icon-list2"
@@ -27,7 +31,6 @@ exports[`should render Header correctly 1`] = `
       activeClassName="header__link--active"
       ariaCurrent="true"
       className="col col-xs-4 header__link"
-      exact={true}
       to="/add"
     >
       <span
@@ -38,7 +41,6 @@ exports[`should render Header correctly 1`] = `
       activeClassName="header__link--active"
       ariaCurrent="true"
       className="col col-xs-4 header__link"
-      exact={true}
       to="/info"
     >
       <span

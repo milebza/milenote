@@ -12,6 +12,8 @@ import {
 import notes from '../fixtures/notes'
 import database from '../../firebase/firebase'
 
+const uid = 'test-uid'
+const defaultAuthState = { auth: { uid } }
 const createMockStore = configureMockStore([thunk])
 
 beforeEach((done) => {
@@ -19,7 +21,7 @@ beforeEach((done) => {
   notes.forEach(({ id, title, content, date }) => {
     notesData[id] = { title, content, date }
   })
-  database.ref('notes').set(notesData).then(() => done())
+  database.ref(`users/${uid}/notes`).set(notesData).then(() => done())
 })
 
 test('should generate remove note action object', () => {
@@ -31,7 +33,7 @@ test('should generate remove note action object', () => {
 })
 
 test('should edit note from firebase', (done) => {
-  const store = createMockStore()
+  const store = createMockStore(defaultAuthState)
   const id = notes[0].id
   const updates = {
     title: 'Untitled'
@@ -43,7 +45,7 @@ test('should edit note from firebase', (done) => {
       id,
       updates
     })
-    return database.ref(`notes/${id}`).once('value')
+    return database.ref(`users/${uid}/notes/${id}`).once('value')
   }).then((snapshot) => {
     expect(snapshot.val().title).toBe(updates.title)
     done()
@@ -51,7 +53,7 @@ test('should edit note from firebase', (done) => {
 })
 
 test('should remove note from firebase', (done) => {
-  const store = createMockStore({})
+  const store = createMockStore(defaultAuthState)
   const id = notes[2].id
 
   store.dispatch(startRemoveNote({ id })).then(() => {
@@ -60,7 +62,7 @@ test('should remove note from firebase', (done) => {
       type: 'REMOVE_NOTE',
       id
     })
-    return database.ref(`notes/${id}`).once('value')
+    return database.ref(`users/${uid}/notes/${id}`).once('value')
   }).then((snapshot) => {
     expect(snapshot.val()).toBeFalsy()
     done()
@@ -87,7 +89,7 @@ test('should generate add note action object with provided values', () => {
 })
 
 test('should add note to database and store', (done) => {
-  const store = createMockStore({})
+  const store = createMockStore(defaultAuthState)
   const noteData = {
     title: 'Books',
     content: 'The Blind Assassin',
@@ -105,7 +107,7 @@ test('should add note to database and store', (done) => {
       }
     })
 
-    return database.ref(`notes/${actions[0].note.id}`).once('value')
+    return database.ref(`users/${uid}/notes/${actions[0].note.id}`).once('value')
   }).then((snapshot) => {
     expect(snapshot.val()).toEqual(noteData)
     done()
@@ -113,7 +115,7 @@ test('should add note to database and store', (done) => {
 })
 
 test('should add note with defaults to database and store', (done) => {
-  const store = createMockStore({})
+  const store = createMockStore(defaultAuthState)
   const noteDefault = {
     title: '',
     content: '',
@@ -131,7 +133,7 @@ test('should add note with defaults to database and store', (done) => {
       }
     })
 
-    return database.ref(`notes/${actions[0].note.id}`).once('value')
+    return database.ref(`users/${uid}/notes/${actions[0].note.id}`).once('value')
   }).then((snapshot) => {
     expect(snapshot.val()).toEqual(noteDefault)
     done()
@@ -147,7 +149,7 @@ test('should setup set notes action object with data', () => {
 })
 
 test('should fetch notes from firebase', (done) => {
-  const store = createMockStore({})
+  const store = createMockStore(defaultAuthState)
 
   store.dispatch(startSetNotes()).then(() => {
     const actions = store.getActions()
