@@ -6,8 +6,8 @@ import configureStore from './store/configureStore'
 import { startSetNotes } from './actions/notes'
 import { login, logout } from './actions/auth'
 
-import 'baseguide/scss/baseguide.scss'
-import 'react-dates/lib/css/_datepicker.css';
+// import 'baseguide/scss/baseguide.scss'
+import 'react-dates/lib/css/_datepicker.css'
 import './styles/style.scss'
 
 import { firebase } from './firebase/firebase'
@@ -31,7 +31,7 @@ const renderApp = () => {
 ReactDOM.render(<p className="text-center">Loading...</p>, document.getElementById('app'))
 
 // When the page first loads
-// and the auth state changes
+// or the auth state changes
 // this will automatically trigger
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {

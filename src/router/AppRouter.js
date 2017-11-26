@@ -15,7 +15,6 @@ export const history = createHistory()
 
 const AppRouter = () => (
   <Router history={history}>
-    <div className="container">
       <Switch>
         <PublicRoute path="/" component={LoginPage} exact={true} />
         <PrivateRoute path="/dashboard" component={DashboardPage} />
@@ -24,7 +23,6 @@ const AppRouter = () => (
         <PrivateRoute path="/edit/:id" component={EditNotePage} />
         <Route component={NotFoundPage} />
       </Switch>
-    </div>
   </Router>
 )
 

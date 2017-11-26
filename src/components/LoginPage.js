@@ -3,9 +3,11 @@ import { connect } from 'react-redux'
 import { startLogin } from '../actions/auth'
 
 export const LoginPage = ({ startLogin }) => (
-  <div>
-    <h1>milenote</h1>
-    <button onClick={startLogin}>Login with Google</button>
+  <div className="login-page text-center">
+    <h1 className="login-page__title">milenote</h1>
+    <p className="login-page__m-text">Login or create an account by pressing<br/> the button below!</p>
+    <button className="login-page__login-btn" onClick={startLogin}>Enter with Google</button>
+    <p className="login-page__s-text"><small>At the moment it's only possible with<br/> a Google account</small></p>
   </div>
 )
 

@@ -1,5 +1,5 @@
 .filters {
-  box-shadow: 0 2px 2px 0 $light-grey;
+  @include shadow-bottom($light-grey)
   background-color: white;
 
   &__search {

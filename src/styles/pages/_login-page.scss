@@ -1,0 +1,36 @@
+.login-page {
+  background-color: white;
+  border-radius: .5rem;
+  margin: 10vh auto 2rem;
+  padding: 3rem 2rem 2rem;
+  @include mq(md) {
+    box-shadow: $box-shadow;
+    margin-top: 15vh;
+    width: 50rem;
+  }
+
+  &__title {
+    font-size: 3.5rem;
+  }
+
+  &__m-text {
+    font-size: 1.8rem;
+    margin: 3rem 0 2.5rem;
+  }
+
+  &__s-text {
+    margin-top: 1rem;
+  }
+
+  &__login-btn {
+    background-color: $brand-color;
+    border: none;
+    border-radius: .3rem;
+    box-shadow: $box-shadow;
+    color: white;
+    padding: .8rem 1.5rem;
+    &:hover {
+      background-color: darken($brand-color, 10%);
+    }
+  }
+}

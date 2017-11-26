@@ -50,13 +50,15 @@ module.exports = (env) => {
             {
               loader: 'css-loader',
               options: {
-                sourceMap: true
+                sourceMap: true,
+                includePaths: ['node_modules', 'src']
               }
             },
             {
               loader: 'sass-loader',
               options: {
-                sourceMap: true
+                sourceMap: true,
+                includePaths: ['node_modules', 'src']
               }
             }
           ]
