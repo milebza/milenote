@@ -1,3 +1,14 @@
 @mixin shadow-bottom($color) {
   box-shadow: 0 2px 2px 0 $color;
 }
+
+@mixin loader($size, $bg-color, $color) {
+  border: $size solid $bg-color;
+  animation: spin 1s linear infinite;
+  border-top: $size solid $color;
+  border-right: $size solid $color;
+  border-bottom: $size solid $color;
+  border-radius: 50%;
+  width: $size * 10;
+  height: $size * 10;
+}

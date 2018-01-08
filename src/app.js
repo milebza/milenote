@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import AppRouter, { history } from './router/AppRouter'
+import LoadingPage from './components/LoadingPage'
 import configureStore from './store/configureStore'
 import { startSetNotes } from './actions/notes'
 import { login, logout } from './actions/auth'
@@ -28,7 +29,7 @@ const renderApp = () => {
   }
 }
 
-ReactDOM.render(<p className="text-center">Loading...</p>, document.getElementById('app'))
+ReactDOM.render(<LoadingPage />, document.getElementById('app'))
 
 // When the page first loads
 // or the auth state changes

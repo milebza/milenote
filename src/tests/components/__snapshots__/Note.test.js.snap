@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shoud render Note with note content 1`] = `
+exports[`should render Note with note content 1`] = `
 <div
   className="form padding-075"
 >
