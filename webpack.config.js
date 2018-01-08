@@ -23,7 +23,7 @@ module.exports = (env) => {
 
   // return webpack config object
   return {
-    entry: './src/app.js',
+    entry: ['babel-polyfill', './src/app.js'],
     output: {
       // needs to be an absolute path
       path: path.join(__dirname, 'public', 'dist'),
