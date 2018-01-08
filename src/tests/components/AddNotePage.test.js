@@ -17,6 +17,6 @@ test('should render AddNotePage correctly', () => {
 
 test('should handle onSubmit', () => {
   wrapper.find('NoteForm').prop('onSubmit')(notes[0])
-  expect(history.push).toHaveBeenLastCalledWith('/')
   expect(startAddNote).toHaveBeenLastCalledWith(notes[0])
+  expect(history.push).toHaveBeenLastCalledWith(`/edit/${notes[0].id}`)
 })

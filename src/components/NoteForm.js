@@ -8,7 +8,7 @@ export default class NoteForm extends React.Component {
     this.state = {
       title: props.note ? props.note.title : '',
       content: props.note ? props.note.content : '',
-      date: props.note ? moment(props.note.date) : moment(),
+      date: moment(),
       error: ''
     }
   }

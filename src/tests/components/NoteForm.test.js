@@ -1,3 +1,4 @@
+import moment from 'moment'
 import React from 'react'
 import { shallow } from 'enzyme'
 import NoteForm from '../../components/NoteForm'
@@ -51,6 +52,6 @@ test('should call onSubmit prop for valid form submission', () => {
   expect(onSubmitSpy).toHaveBeenLastCalledWith({
     title: notes[0].title,
     content: notes[0].content,
-    date: notes[0].date
+    date: expect.any(Number)
   })
 })

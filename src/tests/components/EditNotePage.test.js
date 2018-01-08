@@ -30,8 +30,9 @@ test('should handle change to edit view', () => {
 })
 
 test('should handle startEditNote', () => {
+  expect(wrapper).toMatchSnapshot()
   wrapper.find('button').at(1).simulate('click')
   wrapper.find('NoteForm').prop('onSubmit')(notes[0])
-  expect(history.push).toHaveBeenLastCalledWith('/')
   expect(startEditNote).toHaveBeenLastCalledWith(notes[0].id, notes[0])
+  expect(wrapper).toMatchSnapshot()
 })

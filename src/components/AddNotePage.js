@@ -5,8 +5,7 @@ import NoteForm from './NoteForm'
 
 export class AddNotePage extends React.Component {
   onSubmit = (note) => {
-    this.props.startAddNote(note)
-    this.props.history.push('/')
+    this.props.startAddNote(note).then((id) => this.props.history.push(`/edit/${id}`))
   }
   render() {
     return (

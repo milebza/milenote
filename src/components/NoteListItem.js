@@ -6,7 +6,9 @@ import { startRemoveNote } from '../actions/notes'
 
 export class NoteListItem extends React.Component {
   onRemove = () => {
-    this.props.startRemoveNote({ id: this.props.id })
+    if (confirm('Trash it?')) {
+      this.props.startRemoveNote({ id: this.props.id })
+    }
   }
   render() {
     return (

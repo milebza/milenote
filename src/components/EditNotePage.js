@@ -10,14 +10,16 @@ export class EditNotePage extends React.Component {
   }
   onSubmit = (note) => {
     this.props.startEditNote(this.props.note.id, note)
-    this.props.history.push('/')
+    this.handleEditView()
   }
   onRemove = () => {
-    this.props.startRemoveNote({ id: this.props.note.id })
-    this.props.history.push('/')
+    if (confirm('Trash it?')) {
+      this.props.startRemoveNote({ id: this.props.note.id })
+      this.props.history.push('/')
+    }
   }
   handleEditView = () => {
-    this.setState((prevState) => ({ editView: true }))
+    this.setState((prevState) => ({ editView: !prevState.editView }))
   }
   render() {
     return (

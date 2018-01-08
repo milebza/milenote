@@ -25,10 +25,12 @@ export const startAddNote = (noteData = {}) => {
     const note = {title, content, date}
 
     return database.ref(`users/${uid}/notes`).push(note).then((ref) => {
+      const id = ref.key
       dispatch(addNote({
-        id: ref.key,
+        id,
         ...note
       }))
+      return id
     })
   }
 }
