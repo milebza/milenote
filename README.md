@@ -1,7 +1,23 @@
 # milenote
 A notes application created while learning React.js.
 
-## Technology used
-React v16 with Redux, Webpack, npm, ES6, Jest, Sass, Baseguide, Express, Firebase and Heroku.
-
 Available here: https://milenote.herokuapp.com/
+
+## Technologies used
+**Front-end**  
+* React v16 with Redux  
+* ES6  
+* Jest with enzyme  
+* Sass  
+* Baseguide (CSS framework)  
+* BEM (CSS methodology)  
+
+**Back-end**  
+* Express
+* Firebase
+
+**Tooling**
+* Webpack
+* npm  
+
+Heroku for app deployment.
