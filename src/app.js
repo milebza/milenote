@@ -7,7 +7,6 @@ import configureStore from './store/configureStore'
 import { startSetNotes } from './actions/notes'
 import { login, logout } from './actions/auth'
 
-// import 'baseguide/scss/baseguide.scss'
 import 'react-dates/lib/css/_datepicker.css'
 import './styles/style.scss'
 
