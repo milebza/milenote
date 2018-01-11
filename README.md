@@ -3,11 +3,14 @@ A notes application created while learning React.js.
 
 Available here: https://milenote.herokuapp.com/
 
-## React with Redux
+## What can you do
 
-As I was developing this app I made the following diagram in order to better understand the relationship between React and Redux and how I was going to structure it:
+:green_apple: Create, edit and delete a note  
 
-![React with Redux diagram](https://github.com/milebza/milenote/blob/master/public/images/scheme.JPG)
+:melon: See your full list of notes  
+
+:lemon: Search by any word you want and filter by dates  
+
 
 ## Technologies used
 **Front-end**  
