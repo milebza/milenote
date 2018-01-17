@@ -19,21 +19,23 @@ export class NoteListFilters extends React.Component {
   }
   render() {
     return (
-      <div className="row filters">
-        <div className="col col-md-6 filters__search">
-          <input className="form__input filters__search-input" type="text" value={this.props.filters.text} onChange={this.onTextChange} />
-        </div>
-        <div className="col col-md-6">
-          <DateRangePicker
-            startDate={this.props.filters.startDate}
-            endDate={this.props.filters.endDate}
-            onDatesChange={this.onDatesChange}
-            focusedInput={this.state.calendarFocused}
-            onFocusChange={this.onFocusChange}
-            showClearDates={true}
-            numberOfMonths={1}
-            isOutsideRange={() => false}
-          />
+      <div className="container">
+        <div className="row filters">
+          <div className="col col-md-6 filters__search">
+            <input className="form__input filters__search-input" type="text" value={this.props.filters.text} onChange={this.onTextChange} />
+          </div>
+          <div className="col col-md-6">
+            <DateRangePicker
+              startDate={this.props.filters.startDate}
+              endDate={this.props.filters.endDate}
+              onDatesChange={this.onDatesChange}
+              focusedInput={this.state.calendarFocused}
+              onFocusChange={this.onFocusChange}
+              showClearDates={true}
+              numberOfMonths={1}
+              isOutsideRange={() => false}
+            />
+          </div>
         </div>
       </div>
     )

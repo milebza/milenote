@@ -23,7 +23,7 @@ export class EditNotePage extends React.Component {
   }
   render() {
     return (
-      <div className="relative">
+      <div className="relative container grey-page">
         <button className="btn-link btn--left"
           onClick={this.onRemove}><span className="icon icon-bin"></span> Remove</button>
 

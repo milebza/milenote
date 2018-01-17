@@ -7,15 +7,13 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   font-size: $m-size;
-  @include mq(md) {
-    background-color: $light-grey;
-  }
+  // @include mq(md) {
+  //   background-color: $light-grey;
+  // }
 }
 
 .container {
-  background-color: white;
-  box-shadow: $box-shadow;
-  min-height: 100vh;
+  max-width: 92rem;
   padding-left: 0;
   padding-right: 0;
 }

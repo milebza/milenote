@@ -3,7 +3,7 @@ import NoteList from './NoteList'
 import NoteListFilters from './NoteListFilters'
 
 const DashboardPage = () => (
-  <div>
+  <div className="grey-page">
     <NoteListFilters />
     <NoteList />
   </div>

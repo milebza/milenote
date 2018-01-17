@@ -2,14 +2,14 @@
   @include shadow-bottom(lighten($medium-grey, 20%));
   background-color: $brand-color;
   color: white;
+  position: fixed;
   text-align: center;
+  width: 100%;
+  z-index: 9;
 
   &__content-wrapper {
     justify-content: space-between;
     padding: 1.5rem 3rem 1rem;
-    @include mq(md) {
-      padding: 2.5rem 3rem 2rem;
-    }
   }
 
   &__title {

@@ -16,10 +16,18 @@
 
 .DateRangePickerInput {
   border: none;
+  @include mq(md) {
+    background-color: $light-grey;
+    color: $dark-grey;
+  }
 }
 
 .DateInput {
   padding: 0;
+  @include mq(md) {
+    background-color: $light-grey;
+    color: $dark-grey;
+  } 
 }
 
 .DateRangePickerInput__clear-dates:focus,
