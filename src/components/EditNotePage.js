@@ -23,25 +23,27 @@ export class EditNotePage extends React.Component {
   }
   render() {
     return (
-      <div className="relative container grey-page">
-        <button className="btn-link btn--left"
-          onClick={this.onRemove}><span className="icon icon-bin"></span> Remove</button>
+      <div className="relative grey-page">
+        <div className="container-sml note-page">
+          <button className="btn-link btn--left"
+            onClick={this.onRemove}><span className="icon icon-bin"></span> Remove</button>
 
-        {
-          this.state.editView ?
-          (
-            <NoteForm
-              note={this.props.note}
-              onSubmit={this.onSubmit} />
-          ) :
-          (
-            <div>
-              <button className="btn-link form__btn form__btn-edit"
-                onClick={this.handleEditView}><span className="icon icon-pencil"></span> Edit</button>
-              <Note {...this.props.note} />
-            </div>
-          )
-        }
+          {
+            this.state.editView ?
+            (
+              <NoteForm
+                note={this.props.note}
+                onSubmit={this.onSubmit} />
+            ) :
+            (
+              <div>
+                <button className="btn-link form__btn form__btn-edit"
+                  onClick={this.handleEditView}><span className="icon icon-pencil"></span> Edit</button>
+                <Note {...this.props.note} />
+              </div>
+            )
+          }
+        </div>
       </div>
     )
   }

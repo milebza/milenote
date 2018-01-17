@@ -1,12 +1,12 @@
 .filters {
   background-color: white;
-  padding-top: $header-height + .4rem;
+  padding-top: .4rem;
   position: fixed;
   width: 100%;
   z-index: 7;
   @include mq(md) {
     background-color: $light-grey;
-    padding-top: $header-height + .7rem;
+    padding-top: .7rem;
   }
   @include mq($until: md) {
     @include shadow-bottom($light-grey);

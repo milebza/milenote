@@ -9,10 +9,12 @@ export class AddNotePage extends React.Component {
   }
   render() {
     return (
-      <div>
-        <NoteForm
-          onSubmit={this.onSubmit}
-        />
+      <div className="grey-page">
+        <div className="container-sml">
+          <NoteForm
+            onSubmit={this.onSubmit}
+          />
+        </div>
       </div>
     )
   }

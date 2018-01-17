@@ -27,14 +27,11 @@
   &__link {
     color: white !important;
     font-size: 2rem;
-    padding-bottom: .5rem;
+    padding-right: .6rem;
     text-decoration: none !important;
     &:hover {
       color: white;
       text-decoration: none;
-    }
-    &--active {
-      border-bottom: 2px solid $black;
     }
   }
 }
