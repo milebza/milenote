@@ -9,7 +9,12 @@
     position: fixed;
     right: 4rem;
     text-align: center;
+    transition: all .15s ease-in-out;
     width: 5.6rem;
+    &:hover {
+      color: white;
+      background-color: darken($brand-color, 10%);
+    }
 
     .icon {
       display: block;

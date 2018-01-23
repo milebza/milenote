@@ -1,18 +1,21 @@
 .filters {
   background-color: white;
   padding-top: .4rem;
-  position: fixed;
+  //position: fixed;
   width: 100%;
   z-index: 7;
   @include mq(md) {
     background-color: $light-grey;
-    padding-top: .7rem;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
   }
   @include mq($until: md) {
     @include shadow-bottom($light-grey);
   }
 
   &__search {
+    flex-grow: 1;
     position: relative;
     &:after {
       color: lighten($medium-grey, 20%);
@@ -20,15 +23,16 @@
       font-family: 'icomoon';
       left: 1.5rem;
       position: absolute;
-      top: .8rem;
+      top: .7rem;
       @include mq(md) {
         color: $dark-grey;
+        top: .8rem;
       }
     }
   }
 
   &__search-input {
-    padding-left: 3rem !important;
+    padding-left: 4rem !important;
     @include mq(md) {
       background-color: $light-grey !important;
     }

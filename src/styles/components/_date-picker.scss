@@ -1,3 +1,9 @@
+.DateRangePicker {
+  @include mq($until: md) {
+    padding-left: .3rem;
+  }
+}
+
 .CalendarDay {
   &--selected-span {
     background-color: $brand-color-light;
@@ -27,7 +33,7 @@
   @include mq(md) {
     background-color: $light-grey;
     color: $dark-grey;
-  } 
+  }
 }
 
 .DateRangePickerInput__clear-dates:focus,

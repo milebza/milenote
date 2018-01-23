@@ -20,11 +20,11 @@ export class NoteListFilters extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="row filters">
-          <div className="col col-md-6 filters__search">
+        <div className="filters">
+          <div className="filters__search">
             <input className="form__input filters__search-input" type="text" value={this.props.filters.text} onChange={this.onTextChange} />
           </div>
-          <div className="col col-md-6">
+          <div className="">
             <DateRangePicker
               startDate={this.props.filters.startDate}
               endDate={this.props.filters.endDate}
