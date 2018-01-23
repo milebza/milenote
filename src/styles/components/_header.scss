@@ -1,11 +1,17 @@
 .header {
   @include shadow-bottom(lighten($medium-grey, 20%));
   background-color: $brand-color;
-  color: white;
   position: fixed;
   text-align: center;
   width: 100%;
   z-index: 9;
+
+  a {
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
 
   &__content-wrapper {
     justify-content: space-between;
@@ -25,13 +31,7 @@
   }
 
   &__link {
-    color: white !important;
     font-size: 2rem;
     padding-right: .6rem;
-    text-decoration: none !important;
-    &:hover {
-      color: white;
-      text-decoration: none;
-    }
   }
 }

@@ -26,6 +26,18 @@
   padding-top: $header-height;
 }
 
+.mobile-hide {
+  @include mq($until: md) {
+    display: none;
+  }
+}
+
+.mobile-show {
+  @include mq(md) {
+    display: none;
+  }
+}
+
 .relative {
   position: relative;
 }

@@ -11,7 +11,7 @@ export const NoteList = (props) => (
       ) :
       (
         props.notes.map((note) => {
-          return <NoteListItem key={note.id} {...note} />
+            return <NoteListItem key={note.id} {...note} />
         })
       )
     }

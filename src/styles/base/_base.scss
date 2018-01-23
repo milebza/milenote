@@ -7,9 +7,6 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   font-size: $m-size;
-  // @include mq(md) {
-  //   background-color: $light-grey;
-  // }
 }
 
 .container {
@@ -21,6 +18,17 @@ body {
 .row {
   margin-left: 0;
   margin-right: 0;
+}
+
+.col {
+  padding: 0;
+}
+
+a {
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 button {
