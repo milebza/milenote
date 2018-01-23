@@ -15,19 +15,22 @@
 
   &__content-wrapper {
     justify-content: space-between;
-    padding: 1.5rem 3rem 1rem;
+    padding: 1.5rem 3rem;
   }
 
   &__title {
     font-size: 2.2rem;
     text-align: left;
+    margin: 0;
   }
 
   &__logout-btn {
     background-color: $brand-color;
     border: none;
+    bottom: .2rem;
     color: white;
     font-size: 1.8rem;
+    position: relative;
   }
 
   &__link {
