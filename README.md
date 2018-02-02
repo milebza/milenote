@@ -5,7 +5,9 @@ Available here: https://milenote.herokuapp.com/
 
 ## What can you do
 
-:green_apple: Create, edit and delete a note  
+:pineapple: Create your own account  
+
+:green_apple: Add, edit and delete a note  
 
 :melon: See your full list of notes  
 
