@@ -1,5 +1,25 @@
 .note-info {
+  &__btn-delete {
+    color: $dark-grey;
+    font-size: 1.8rem;
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+    @include mq(md) {
+      background-color: $light-grey;
+      left: 11rem;
+      right: 0;
+    }
+  }
+
+  &__dot {
+    bottom: .2rem;
+    right: 1.5rem;
+    position: relative;
+  }
+
   &__title{
+    margin: .5rem 0 .5rem !important;
     padding: 0.375em 0.75em;
   }
 
@@ -7,5 +27,14 @@
     background-color: white !important;
     color: $black !important;
     cursor: default !important;
+  }
+
+  &__wrapper {
+    background-color: white;
+    @include mq(md) {
+      box-shadow: $box-shadow;
+      margin-top: 1.5rem;
+      padding: 2rem;
+    }
   }
 }
