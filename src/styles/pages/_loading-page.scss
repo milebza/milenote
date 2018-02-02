@@ -7,7 +7,7 @@
   &__loader {
     @include loader(.4rem, white, lighten($dark-grey, 20%));
     @include mq(md) {
-      @include loader(.5rem, $light-grey, $dark-grey);
+      @include loader(.5rem, white, lighten($dark-grey, 20%));
     }
   }
 }

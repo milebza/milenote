@@ -1,5 +1,14 @@
 .form {
+  margin-bottom: 0;
   padding: 2rem 1rem 1rem;
+  @include mq($until: md) {
+    background-color: white;
+  }
+
+  hr {
+    color: $medium-grey;
+    margin: 1rem;
+  }
 
   &__warning {
     color: $dark-grey;
@@ -9,11 +18,19 @@
     margin-left: -6rem;
     position: absolute;
     text-align: center;
+    top: 8rem;
     width: 12rem;
   }
 
   &__input-wrapper {
+    background-color: white;
     margin-top: 1rem;
+    position: relative;
+    @include mq(md) {
+      box-shadow: $box-shadow;
+      margin-top: 1.5rem;
+      padding: 2rem;
+    }
   }
 
   &__input {
@@ -29,6 +46,9 @@
     margin-left: 1rem;
     span {
       color: $brand-color;
+    }
+    @include mq(md) {
+      background-color: $light-grey;
     }
   }
 

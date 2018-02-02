@@ -38,8 +38,11 @@ export default class NoteForm extends React.Component {
     return (
       <div>
         <form className="form" onSubmit={this.onSubmit}>
-          <button className="btn-link form__btn"><span className="icon icon-checkmark"></span> Save</button>
-          <p className="form__warning">{this.state.error && this.state.error}</p>
+          <div className="form__actions">
+            <button className="btn-link form__btn"><span className="icon icon-checkmark"></span> Save</button>
+            <p className="form__warning">{this.state.error && this.state.error}</p>
+          </div>
+          <hr className="mobile-show"></hr>
           <div className="form__input-wrapper">
             <input
               className="form__input form__input--title"
