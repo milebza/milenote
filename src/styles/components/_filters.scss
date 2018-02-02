@@ -1,7 +1,6 @@
 .filters {
   background-color: white;
   padding-top: .4rem;
-  //position: fixed;
   width: 100%;
   z-index: 7;
   @include mq(md) {
@@ -12,6 +11,7 @@
   }
   @include mq($until: md) {
     @include shadow-bottom($light-grey);
+    position: fixed;
   }
 
   &__search {

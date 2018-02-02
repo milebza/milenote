@@ -4,17 +4,23 @@ import NoteListItem from './NoteListItem'
 import selectNotes from '../selectors/notes'
 
 export const NoteList = (props) => (
-  <div className="container note-list">
-    {props.notes.length === 0 ?
-      (
-        <p className="text-center no-result">No notes!</p>
-      ) :
-      (
-        props.notes.map((note) => {
-            return <NoteListItem key={note.id} {...note} />
-        })
-      )
-    }
+  <div className="container">
+    <div className="note-list">
+      {props.notes.length === 0 ?
+        (
+          <p className="text-center no-result">No notes!</p>
+        ) :
+        (
+          <div className="row">
+            {
+              props.notes.map((note) => {
+                  return <NoteListItem key={note.id} {...note} />
+              })
+            }
+          </div>
+        )
+      }
+    </div>
   </div>
 )
 
