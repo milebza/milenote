@@ -16,9 +16,18 @@
       background-color: darken($brand-color, 10%);
     }
 
+    @include mq($until: md) {
+      height: 7.5rem;
+      width: 7.5rem;
+    }
+
     .icon {
       display: block;
       padding-top: 2rem;
+      @include mq($until: md) {
+        font-size: 2.3rem;
+        padding-top: 2.6rem;
+      }
     }
   }
 }
