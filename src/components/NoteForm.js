@@ -24,7 +24,7 @@ export default class NoteForm extends React.Component {
     e.preventDefault()
 
     if (!this.state.title && !this.state.content) {
-      this.setState(() => ({ error: 'Type something!' }))
+      this.setState(() => ({ error: 'Type something' }))
     } else {
       this.setState(() => ({ error: '' }))
       this.props.onSubmit({
