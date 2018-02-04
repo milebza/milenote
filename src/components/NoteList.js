@@ -8,7 +8,7 @@ export const NoteList = (props) => (
     <div className="note-list">
       {props.notes.length === 0 ?
         (
-          <p className="text-center no-result">No notes!</p>
+          <p className="text-center no-result">No notes</p>
         ) :
         (
           <div className="row">

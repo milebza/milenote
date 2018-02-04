@@ -16,6 +16,10 @@
   &__content-wrapper {
     justify-content: space-between;
     padding: 1.5rem 1.5rem 1.5rem 3rem;
+
+    @include mq(md) {
+      padding: 1.3rem 1.5rem 1.3rem 3rem;
+    }
   }
 
   &__title {
