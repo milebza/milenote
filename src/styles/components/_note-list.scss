@@ -1,6 +1,7 @@
 .note-list {
   padding-top: 8.3rem;
   @include mq(md) {
+    padding-bottom: 2rem;
     padding-top: 1rem;
   }
 }

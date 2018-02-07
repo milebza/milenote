@@ -15,8 +15,9 @@
 
   &__content-wrapper {
     justify-content: space-between;
+    margin: 0 auto;
+    max-width: 140rem;
     padding: 1.5rem 1.5rem 1.5rem 3rem;
-
     @include mq(md) {
       padding: 1.3rem 1.5rem 1.3rem 3rem;
     }

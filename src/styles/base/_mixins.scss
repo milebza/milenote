@@ -4,7 +4,7 @@
 
 @mixin loader($size, $bg-color, $color) {
   border: $size solid $bg-color;
-  animation: spin 1s linear infinite;
+  animation: spin .8s linear infinite;
   border-top: $size solid $color;
   border-right: $size solid $color;
   border-bottom: $size solid $color;

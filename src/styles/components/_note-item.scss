@@ -55,10 +55,4 @@
     padding: 0 .5rem;
     position: relative;
   }
-
-  &__btn-remove {
-    @include mq(md) {
-
-    }
-  }
 }

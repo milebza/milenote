@@ -12,7 +12,7 @@
     position: fixed;
     right: 4rem;
     text-align: center;
-    transition: all .15s ease-in-out;
+    transition: $transition-15s;
     width: 5.6rem;
     &:hover {
       color: white;

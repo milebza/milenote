@@ -1,13 +1,14 @@
 .loading-page {
+  background-color: lighten($brand-color, 10%);
   align-items: center;
   display: flex;
   height: 100vh;
   justify-content: center;
   width: 100%;
   &__loader {
-    @include loader(.4rem, white, lighten($dark-grey, 20%));
+    @include loader(.4rem, lighten($brand-color, 10%), white);
     @include mq(md) {
-      @include loader(.5rem, white, lighten($dark-grey, 20%));
+      @include loader(.5rem, lighten($brand-color, 10%), white);
     }
   }
 }

@@ -37,6 +37,7 @@
     box-shadow: $box-shadow;
     color: white;
     padding: .8rem 1.5rem;
+    transition: $transition-15s;
     &:hover {
       background-color: darken($brand-color, 10%);
     }
