@@ -8,7 +8,9 @@ export const Header = ({ startLogout }) => (
     <div className="flex header__content-wrapper">
       <NavLink to="/" className=""><h1 className="header__title">milenote</h1></NavLink>
       <section>
-        <NavLink to="/info" className="header__link"><span className="icon icon-info"></span></NavLink>
+        {
+          //<NavLink to="/info" className="header__link"><span className="icon icon-info"></span></NavLink>
+        }
         <button className="header__logout-btn" onClick={startLogout}>Logout</button>
       </section>
     </div>
