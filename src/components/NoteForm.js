@@ -9,7 +9,7 @@ export default class NoteForm extends React.Component {
       title: props.note ? props.note.title : '',
       content: props.note ? props.note.content : '',
       date: moment(),
-      error: ''
+      error: false
     }
   }
   onTitleChange = (e) => {
@@ -24,9 +24,9 @@ export default class NoteForm extends React.Component {
     e.preventDefault()
 
     if (!this.state.title && !this.state.content) {
-      this.setState(() => ({ error: 'Type something' }))
+      this.setState(() => ({ error: true }))
     } else {
-      this.setState(() => ({ error: '' }))
+      this.setState(() => ({ error: false }))
       this.props.onSubmit({
         title: this.state.title,
         content: this.state.content,
@@ -40,7 +40,10 @@ export default class NoteForm extends React.Component {
         <form className="form" onSubmit={this.onSubmit}>
           <div className="form__actions">
             <button className="btn-link form__btn"><span className="icon icon-checkmark"></span> Save</button>
-            <p className="form__warning">{this.state.error && this.state.error}</p>
+            {
+              (!this.state.title && !this.state.content && this.state.error) &&
+              <p className="form__warning">Type something</p>
+            }
           </div>
           <hr className="mobile-show"></hr>
           <div className="form__input-wrapper">
