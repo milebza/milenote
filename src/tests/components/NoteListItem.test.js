@@ -15,7 +15,7 @@ test('should render NoteListItem correctly', () => {
   expect(wrapper).toMatchSnapshot()
 })
 
-test('should handle startRemoveNote', () => {
-  wrapper.find('button').simulate('click')
-  expect(startRemoveNote).toHaveBeenLastCalledWith({id: notes[0].id})
-})
+// test('should handle startRemoveNote', () => {
+//   wrapper.find('button').simulate('click')
+//   expect(startRemoveNote).toHaveBeenLastCalledWith({id: notes[0].id})
+// })

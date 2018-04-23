@@ -1,9 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render AddNotePage correctly 1`] = `
-<div>
-  <NoteForm
-    onSubmit={[Function]}
-  />
+<div
+  className="grey-page"
+>
+  <div
+    className="container-sml"
+  >
+    <NoteForm
+      onSubmit={[Function]}
+    />
+  </div>
 </div>
 `;

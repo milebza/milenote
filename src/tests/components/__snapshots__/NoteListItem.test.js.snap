@@ -2,42 +2,58 @@
 
 exports[`should render NoteListItem correctly 1`] = `
 <div
-  className="row note-item"
+  className="col col-md-4"
 >
-  <Link
-    className="col col-xs-11 note-item__content"
-    replace={false}
-    to="/edit/1"
+  <div
+    className="note-item"
   >
-    <div>
-      <h3
-        className="note-item__title"
+    <Link
+      replace={false}
+      to="/edit/1"
+    >
+      <div
+        className="note-item__content"
       >
-        Letter
-      </h3>
-      <p
-        className="note-item__p"
-      >
-        Dear friend
-      </p>
+        <h3
+          className="note-item__title"
+        >
+          Letter
+        </h3>
+        <p
+          className="note-item__p"
+        >
+          Dear friend
+        </p>
+      </div>
+    </Link>
+    <div
+      className="note-item__details"
+    >
       <small
-        className="note-item__date"
+        className="note-item__grey"
       >
         Jan 1st 1970
       </small>
+      <small
+        className="mobile-show note-item__grey note-item__dot"
+      >
+        .
+      </small>
+      <small
+        className="mobile-show note-item__grey"
+        onClick={[Function]}
+      >
+        Delete
+      </small>
+      <button
+        className="btn-link note-item__btn-remove mobile-hide"
+        onClick={[Function]}
+      >
+        <span
+          className="icon icon-bin"
+        />
+      </button>
     </div>
-  </Link>
-  <div
-    className="col col-xs-1"
-  >
-    <button
-      className="btn-link note-item__btn-remove"
-      onClick={[Function]}
-    >
-      <span
-        className="icon icon-bin"
-      />
-    </button>
   </div>
 </div>
 `;

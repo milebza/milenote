@@ -1,37 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render NoteList with empty message 1`] = `
-<div>
-  <p
-    className="text-center no-result"
+<div
+  className="container"
+>
+  <div
+    className="note-list"
   >
-    No notes!
-  </p>
+    <p
+      className="text-center no-result"
+    >
+      No notes
+    </p>
+  </div>
 </div>
 `;
 
 exports[`should render NoteList with notes 1`] = `
-<div>
-  <Connect(NoteListItem)
-    content="Dear friend"
-    date={0}
-    id="1"
-    key="1"
-    title="Letter"
-  />
-  <Connect(NoteListItem)
-    content="oranges, lettuce"
-    date={-345600000}
-    id="2"
-    key="2"
-    title="Shopping list"
-  />
-  <Connect(NoteListItem)
-    content="Pulp Fiction"
-    date={345600000}
-    id="3"
-    key="3"
-    title="Movies"
-  />
+<div
+  className="container"
+>
+  <div
+    className="note-list"
+  >
+    <div
+      className="row"
+    >
+      <Connect(NoteListItem)
+        content="Dear friend"
+        date={0}
+        id="1"
+        key="1"
+        title="Letter"
+      />
+      <Connect(NoteListItem)
+        content="oranges, lettuce"
+        date={-345600000}
+        id="2"
+        key="2"
+        title="Shopping list"
+      />
+      <Connect(NoteListItem)
+        content="Pulp Fiction"
+        date={345600000}
+        id="3"
+        key="3"
+        title="Movies"
+      />
+    </div>
+  </div>
 </div>
 `;

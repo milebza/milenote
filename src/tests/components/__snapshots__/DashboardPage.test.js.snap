@@ -1,8 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render DashboardPage correctly 1`] = `
-<div>
+<div
+  className="grey-page dashboard-page"
+>
   <Connect(NoteListFilters) />
   <Connect(NoteList) />
+  <NavLink
+    activeClassName="active"
+    ariaCurrent="true"
+    className="dashboard-page__btn-add"
+    to="/add"
+  >
+    <span
+      className="icon icon-file-text2"
+    />
+  </NavLink>
 </div>
 `;

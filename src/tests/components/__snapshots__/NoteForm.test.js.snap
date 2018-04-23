@@ -6,16 +6,23 @@ exports[`should render NoteForm correctly 1`] = `
     className="form"
     onSubmit={[Function]}
   >
-    <button
-      className="btn-link form__btn"
+    <div
+      className="form__actions"
     >
-      <span
-        className="icon icon-checkmark"
+      <button
+        className="btn-link form__btn"
+      >
+        <span
+          className="icon icon-checkmark"
+        />
+         Save
+      </button>
+      <p
+        className="form__warning"
       />
-       Save
-    </button>
-    <p
-      className="form__warning"
+    </div>
+    <hr
+      className="mobile-show"
     />
     <div
       className="form__input-wrapper"
@@ -46,16 +53,23 @@ exports[`should render NoteForm with note data 1`] = `
     className="form"
     onSubmit={[Function]}
   >
-    <button
-      className="btn-link form__btn"
+    <div
+      className="form__actions"
     >
-      <span
-        className="icon icon-checkmark"
+      <button
+        className="btn-link form__btn"
+      >
+        <span
+          className="icon icon-checkmark"
+        />
+         Save
+      </button>
+      <p
+        className="form__warning"
       />
-       Save
-    </button>
-    <p
-      className="form__warning"
+    </div>
+    <hr
+      className="mobile-show"
     />
     <div
       className="form__input-wrapper"
@@ -86,16 +100,23 @@ exports[`should render error for invalid form submission 1`] = `
     className="form"
     onSubmit={[Function]}
   >
-    <button
-      className="btn-link form__btn"
+    <div
+      className="form__actions"
     >
-      <span
-        className="icon icon-checkmark"
+      <button
+        className="btn-link form__btn"
+      >
+        <span
+          className="icon icon-checkmark"
+        />
+         Save
+      </button>
+      <p
+        className="form__warning"
       />
-       Save
-    </button>
-    <p
-      className="form__warning"
+    </div>
+    <hr
+      className="mobile-show"
     />
     <div
       className="form__input-wrapper"
@@ -126,19 +147,26 @@ exports[`should render error for invalid form submission 2`] = `
     className="form"
     onSubmit={[Function]}
   >
-    <button
-      className="btn-link form__btn"
+    <div
+      className="form__actions"
     >
-      <span
-        className="icon icon-checkmark"
-      />
-       Save
-    </button>
-    <p
-      className="form__warning"
-    >
-      Type something!
-    </p>
+      <button
+        className="btn-link form__btn"
+      >
+        <span
+          className="icon icon-checkmark"
+        />
+         Save
+      </button>
+      <p
+        className="form__warning"
+      >
+        Type something
+      </p>
+    </div>
+    <hr
+      className="mobile-show"
+    />
     <div
       className="form__input-wrapper"
     >

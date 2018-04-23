@@ -1,151 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should handle change to edit view 1`] = `
-<div
-  className="relative"
->
-  <button
-    className="btn-link btn--left"
-    onClick={[Function]}
-  >
-    <span
-      className="icon icon-bin"
-    />
-     Remove
-  </button>
-  <div>
-    <button
-      className="btn-link form__btn form__btn-edit"
-      onClick={[Function]}
-    >
-      <span
-        className="icon icon-pencil"
-      />
-       Edit
-    </button>
-    <Note
-      content="Dear friend"
-      date={0}
-      id="1"
-      title="Letter"
-    />
-  </div>
-</div>
-`;
-
-exports[`should handle change to edit view 2`] = `
-<div
-  className="relative"
->
-  <button
-    className="btn-link btn--left"
-    onClick={[Function]}
-  >
-    <span
-      className="icon icon-bin"
-    />
-     Remove
-  </button>
-  <NoteForm
-    note={
-      Object {
-        "content": "Dear friend",
-        "date": 0,
-        "id": "1",
-        "title": "Letter",
-      }
-    }
-    onSubmit={[Function]}
-  />
-</div>
-`;
-
-exports[`should handle startEditNote 1`] = `
-<div
-  className="relative"
->
-  <button
-    className="btn-link btn--left"
-    onClick={[Function]}
-  >
-    <span
-      className="icon icon-bin"
-    />
-     Remove
-  </button>
-  <div>
-    <button
-      className="btn-link form__btn form__btn-edit"
-      onClick={[Function]}
-    >
-      <span
-        className="icon icon-pencil"
-      />
-       Edit
-    </button>
-    <Note
-      content="Dear friend"
-      date={0}
-      id="1"
-      title="Letter"
-    />
-  </div>
-</div>
-`;
-
-exports[`should handle startEditNote 2`] = `
-<div
-  className="relative"
->
-  <button
-    className="btn-link btn--left"
-    onClick={[Function]}
-  >
-    <span
-      className="icon icon-bin"
-    />
-     Remove
-  </button>
-  <NoteForm
-    note={
-      Object {
-        "content": "Dear friend",
-        "date": 0,
-        "id": "1",
-        "title": "Letter",
-      }
-    }
-    onSubmit={[Function]}
-  />
-</div>
-`;
-
 exports[`should render EditNotePage correctly 1`] = `
 <div
-  className="relative"
+  className="relative grey-page"
 >
-  <button
-    className="btn-link btn--left"
-    onClick={[Function]}
+  <div
+    className="container-sml"
   >
-    <span
-      className="icon icon-bin"
-    />
-     Remove
-  </button>
-  <div>
     <button
-      className="btn-link form__btn form__btn-edit"
+      className="btn-link note-info__btn-delete"
       onClick={[Function]}
     >
       <span
-        className="icon icon-pencil"
-      />
-       Edit
+        className="note-info__dot mobile-hide"
+      >
+        |
+      </span>
+      <span>
+         Delete
+      </span>
     </button>
     <Note
       content="Dear friend"
       date={0}
+      handleEditView={[Function]}
       id="1"
       title="Letter"
     />

@@ -23,8 +23,7 @@ export class NoteListItem extends React.Component {
           <div className="note-item__details">
             <small className="note-item__grey">{moment(this.props.date).format("MMM Do YYYY")}</small>
             <small className="mobile-show note-item__grey note-item__dot">.</small>
-            <small className="mobile-show note-item__grey" onClick={this.onRemove}>Delete</small>
-            <button className="btn-link note-item__btn-remove mobile-hide" onClick={this.onRemove}><span className="icon icon-bin"></span></button>
+            <small className="note-item__grey" style={{ cursor: 'pointer' }} onClick={this.onRemove}>Delete</small>
           </div>
         </div>
       </div>

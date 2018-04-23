@@ -4,49 +4,29 @@ exports[`should render Header correctly 1`] = `
 <header
   className="header"
 >
-  <h1
-    className="header__title"
-  >
-    milenote
-  </h1>
-  <button
-    onClick={[Function]}
-  >
-    Logout
-  </button>
-  <nav
-    className="row header__nav"
+  <div
+    className="flex header__content-wrapper"
   >
     <NavLink
-      activeClassName="header__link--active"
+      activeClassName="active"
       ariaCurrent="true"
-      className="col col-xs-4 header__link"
-      to="/dashboard"
+      className=""
+      to="/"
     >
-      <span
-        className="icon icon-list2"
-      />
+      <h1
+        className="header__title"
+      >
+        milenote
+      </h1>
     </NavLink>
-    <NavLink
-      activeClassName="header__link--active"
-      ariaCurrent="true"
-      className="col col-xs-4 header__link"
-      to="/add"
-    >
-      <span
-        className="icon icon-file-text2"
-      />
-    </NavLink>
-    <NavLink
-      activeClassName="header__link--active"
-      ariaCurrent="true"
-      className="col col-xs-4 header__link"
-      to="/info"
-    >
-      <span
-        className="icon icon-info"
-      />
-    </NavLink>
-  </nav>
+    <section>
+      <button
+        className="header__logout-btn"
+        onClick={[Function]}
+      >
+        Logout
+      </button>
+    </section>
+  </div>
 </header>
 `;

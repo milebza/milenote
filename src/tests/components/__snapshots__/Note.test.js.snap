@@ -2,18 +2,37 @@
 
 exports[`should render Note with note content 1`] = `
 <div
-  className="form padding-075"
+  className="form"
 >
-  <h3
-    className="note-info__title"
+  <div
+    className="form__actions"
   >
-    Letter
-  </h3>
-  <textarea
-    className="form__input note-info__content"
-    disabled={true}
-    rows="20"
-    value="Dear friend"
+    <button
+      className="btn-link form__btn form__btn-edit"
+    >
+      <span
+        className="icon icon-pencil"
+      />
+       Edit
+    </button>
+  </div>
+  <hr
+    className="mobile-show"
   />
+  <div
+    className="note-info__wrapper"
+  >
+    <h3
+      className="note-info__title"
+    >
+      Letter
+    </h3>
+    <textarea
+      className="form__input note-info__content"
+      disabled={true}
+      rows="20"
+      value="Dear friend"
+    />
+  </div>
 </div>
 `;
